@@ -13,6 +13,7 @@ namespace Spotify.Models
         public string SoundtrackPath { get; set; }
         public Genre Genre { get; set; }
         public readonly DateTime CreationDate;
+        public TimeSpan Duration { get; set; }
     }
 
 
