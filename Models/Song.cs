@@ -14,6 +14,20 @@ namespace Spotify.Models
         public Genre Genre { get; set; }
         public readonly DateTime CreationDate;
         public TimeSpan Duration { get; set; }
+
+        public Song(string name, Artist creator, string soundtrackPath, Genre genre, DateTime creationDate, TimeSpan duration)
+        {
+            Name = name;
+            Creator = creator;
+            SoundtrackPath = soundtrackPath;
+            Genre = genre;
+            CreationDate = creationDate;
+            Duration = duration;
+        }
+
+        public Song() : this("", new Artist(), "", new Genre(), new DateTime(), new TimeSpan()) { }
+
+
     }
 
 

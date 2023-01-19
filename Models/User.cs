@@ -13,5 +13,16 @@ namespace Spotify.Models
         public string Password { get; set; }
         public List<Playlist> Playlists { get; set; }
         public List<Song> LikedSongs { get; set; }
+
+        public User(string fullName, string email, string password, List<Playlist> playlists, List<Song> likedSongs)
+        {
+            FullName = fullName;
+            Email = email;
+            Password = password;
+            Playlists = playlists;
+            LikedSongs = likedSongs;
+        }
+
+        public User(): this("", "", "", new List<Playlist>(), new List<Song>()) { }
     }
 }

@@ -10,7 +10,18 @@ namespace Spotify.Models
     {
         public string Name { get; set; }
         public List<Song> Songs { get; set; }
-        public int SongsCount { get; set; }
-        public int Duration { get; set; }
+        public int SongsCount => Songs.Count;
+        public TimeSpan Duration { get; set; }
+
+        public Playlist(string name, List<Song> songs)
+        {
+            Name = name;
+            Songs = songs;
+            Duration = new TimeSpan();
+            for (int i = 0; i < Songs.Count; i++)
+                Duration += Songs[i].Duration;
+        }
+
+        public Playlist() : this("", new List<Song>()) { }
     }
 }
