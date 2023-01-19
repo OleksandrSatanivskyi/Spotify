@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Spotify.Models
 {
-    internal class Song
+    public class Song
     {
         public string Name { get; set; }
         public Artist Creator { get; set; }
@@ -14,4 +14,8 @@ namespace Spotify.Models
         public Genre Genre { get; set; }
         public readonly DateTime CreationDate;
     }
+
+
+
+    public enum Genre { }
 }
