@@ -3,10 +3,131 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Spotify"
+        xmlns:local="clr-namespace:Spotify" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1920" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <SolidColorBrush x:Key="MainPanelBackgroundColor" Color="#000000"/>
+    </Window.Resources>
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF222222" Offset="0"/>
+            <GradientStop Color="#FF121212" Offset="1"/>
+            <GradientStop Color="#FF1B1B1B" Offset="0.268"/>
+            <GradientStop Color="#FF1A1A1A" Offset="0.545"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="230"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="1000*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.RowSpan="3" Grid.Column="0" Background="{DynamicResource MainPanelBackgroundColor}">
+            <StackPanel Orientation="Vertical">
+                <Image x:Name="logo" Margin="10"/>
 
+                <Button HorizontalAlignment="Left" Height="50" Width="200" Style="{DynamicResource MainMenuButtonStyle}">
+                    <Grid Height="50" Width="200">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="5*" />
+                        </Grid.ColumnDefinitions>
+                        <materialDesign:PackIcon Height="25" Width="25" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Kind="Home" Foreground="White" />
+                        <Label Content="Home" VerticalAlignment="Center" FontSize="23" Foreground="White" Grid.Column="1"/>
+                    </Grid>
+                </Button>
+
+                <Button HorizontalAlignment="Left" Height="50" Width="200" Style="{DynamicResource MainMenuButtonStyle}">
+                    <Grid Height="50" Width="200">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="5*" />
+                        </Grid.ColumnDefinitions>
+                        <materialDesign:PackIcon Height="25" Width="25" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Kind="Magnify" Foreground="White" />
+                        <Label Content="Search" VerticalAlignment="Center" FontSize="23" Foreground="White" Grid.Column="1"/>
+                    </Grid>
+                </Button>
+
+                <Button HorizontalAlignment="Left" Height="50" Width="200" Style="{DynamicResource MainMenuButtonStyle}">
+                    <Grid Height="50" Width="200">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="5*" />
+                        </Grid.ColumnDefinitions>
+                        <materialDesign:PackIcon Height="25" Width="25" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Kind="MusicBoxMultiple" Foreground="White" />
+                        <Label Content="Your Library" VerticalAlignment="Center" FontSize="23" Foreground="White" Grid.Column="1"/>
+                    </Grid>
+                </Button>
+
+                <Button HorizontalAlignment="Left" Height="50" Width="230" Style="{DynamicResource MainMenuButtonStyle}">
+                    <Grid Height="50" Width="230">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.6*" />
+                            <ColumnDefinition Width="5*" />
+                        </Grid.ColumnDefinitions>
+                        <materialDesign:PackIcon Height="25" Width="25" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Kind="BookPlusMultiple" Foreground="White" />
+                        <Label Content="Create playlist" VerticalAlignment="Center" FontSize="23" Foreground="White" Grid.Column="1"/>
+                    </Grid>
+                </Button>
+
+                <Button HorizontalAlignment="Left" Height="50" Width="200" Style="{DynamicResource MainMenuButtonStyle}">
+                    <Grid Height="50" Width="200">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="5*" />
+                        </Grid.ColumnDefinitions>
+                        <materialDesign:PackIcon Height="25" Width="25" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="0" Kind="HeartBox" Foreground="White" />
+                        <Label Content="Liked songs" VerticalAlignment="Center" FontSize="23" Foreground="White" Grid.Column="1"/>
+                    </Grid>
+                </Button>
+
+
+            </StackPanel>
+        </Border>
+        <Grid Grid.Row="0" Grid.Column="1" Width="1690">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="13*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <Button Foreground="White"
+                    Style="{StaticResource MaterialDesignIconButton}"
+                    Grid.Column="0"
+                    ToolTip="MaterialDesignIconButton"
+                    Background="{DynamicResource MaterialDesignTextFieldBoxBackground}"
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                <materialDesign:PackIcon Kind="ChevronLeft" />
+            </Button>
+            <Button Foreground="White"
+                    Style="{StaticResource MaterialDesignIconButton}"
+                    Grid.Column="1"
+                    ToolTip="MaterialDesignIconButton"
+                    Background="{DynamicResource MaterialDesignTextFieldBoxBackground}"
+                    IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                <materialDesign:PackIcon Kind="ChevronRight" />
+            </Button>
+            <Grid Width="200" Grid.Column="3">
+                  <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                          Height="55"
+                          Background="#FF151515"
+                          BorderBrush="#FF151515"
+                          Width="200"
+                          materialDesign:ButtonAssist.CornerRadius="30"
+                          ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
+                          IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+                             <TextBlock
+                      Text="Log in" />
+                </Button>
+            </Grid>
+            
+        </Grid>
+        <Frame x:Name="MainContainer"
+               Grid.Column="1"
+               Grid.Row="1"/>
     </Grid>
 </Window>
