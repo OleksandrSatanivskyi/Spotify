@@ -8,6 +8,16 @@
         Title="MainWindow" Height="1080" Width="1920" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <SolidColorBrush x:Key="MainPanelBackgroundColor" Color="#000000"/>
+        <Style x:Key="MainMenuButtonStyle" BasedOn="{StaticResource MaterialDesignFlatButton}" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="Margin" Value="2"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="Gray"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
