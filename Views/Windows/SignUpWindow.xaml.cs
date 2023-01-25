@@ -1,7 +1,12 @@
-﻿using System;
+﻿using Spotify.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
+using System.Net.Sockets;
+using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,6 +27,21 @@ namespace Spotify.Views.Windows
         public SignUpWindow()
         {
             InitializeComponent();
+        }
+
+        private void SignUpTabSendButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SignUpButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
