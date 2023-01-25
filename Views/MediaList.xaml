@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="Spotify.Views.MediaList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Spotify.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             Background="Black"
+             d:DesignHeight="330" d:DesignWidth="1690">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="270"/>
+        </Grid.RowDefinitions>
+        <Label Name="Title"
+               Content="Title"
+               FontSize="30"
+               FontWeight="DemiBold"
+               VerticalAlignment="Top"
+               HorizontalAlignment="Left"
+               Margin="5"
+               FontFamily="Roboto" 
+               Foreground="White"/>
+        <Button Name="ShowMoreBtn"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                Margin="0, 5, 5, 0"
+                Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                Height="50"
+                Background="#FF151515"
+                BorderBrush="#FF151515"
+                Width="200"
+                materialDesign:ButtonAssist.CornerRadius="30"
+                ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
+                IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
+            <TextBlock
+              Text="Show more" />
+        </Button>
+        <materialDesign:Card HorizontalAlignment="Left" Margin="45, 0" Width="190" Height="270" Grid.Row="1" Background="#FF252525">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="190" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Border Background="Black"
+                        Margin="8"
+                        CornerRadius="8 8 8 8"
+                        Grid.Row="0"/>
+                <Button Grid.Row="0"
+                        Style="{StaticResource MaterialDesignIconButton}"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Margin="0 0 16 -15"
+                        Foreground="Black"
+                        Background="#FF32BF32">
+                    <materialDesign:PackIcon Kind="Play" />
+                </Button>
+                <StackPanel Grid.Row="1" Margin="5">
+                    <TextBlock Foreground="White" Text="Title" Name="TitleTb" FontWeight="Bold" />
+                    
+
+                    <TextBlock Foreground="Gray" Name="Description"
+                               TextWrapping="Wrap"
+                               VerticalAlignment="Center"
+                               Text="Description" />
+                </StackPanel>
+
+            </Grid>
+        </materialDesign:Card>
+    </Grid>
+
+</UserControl>

@@ -33,14 +33,14 @@
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="80*"/>
-            <RowDefinition Height="1000*"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="1000"/>
         </Grid.RowDefinitions>
         <Border Grid.RowSpan="3" Grid.Column="0" Background="{DynamicResource MainPanelBackgroundColor}">
             <StackPanel Orientation="Vertical">
                 <Image x:Name="logo" Margin="10"/>
 
-                <Button HorizontalAlignment="Left" Height="50" Width="200" Style="{DynamicResource MainMenuButtonStyle}">
+                <Button x:Name="HomeBtn" HorizontalAlignment="Left" Height="50" Width="200" Style="{DynamicResource MainMenuButtonStyle}" Click="HomeBtn_Click">
                     <Grid Height="50" Width="200">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*" />
@@ -94,8 +94,6 @@
                         <Label Content="Liked songs" VerticalAlignment="Center" FontSize="23" Foreground="White" Grid.Column="1"/>
                     </Grid>
                 </Button>
-
-
             </StackPanel>
         </Border>
         <Grid Grid.Row="0" Grid.Column="1" Width="1690">
@@ -114,6 +112,7 @@
                 <materialDesign:PackIcon Kind="ChevronLeft" />
             </Button>
             <Button Foreground="White"
+                    
                     Style="{StaticResource MaterialDesignIconButton}"
                     Grid.Column="1"
                     ToolTip="MaterialDesignIconButton"
@@ -122,7 +121,7 @@
                 <materialDesign:PackIcon Kind="ChevronRight" />
             </Button>
             <Grid Width="200" Grid.Column="3">
-                  <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                <Button Style="{StaticResource MaterialDesignRaisedDarkButton}"
                           Height="55"
                           Background="#FF151515"
                           BorderBrush="#FF151515"
@@ -130,11 +129,11 @@
                           materialDesign:ButtonAssist.CornerRadius="30"
                           ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
                           IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}">
-                             <TextBlock
+                    <TextBlock
                       Text="Log in" />
                 </Button>
             </Grid>
-            
+
         </Grid>
         <Frame x:Name="MainContainer"
                Grid.Column="1"

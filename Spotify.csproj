@@ -36,4 +36,11 @@
     <Resource Include="Views\Resources\Spotify_Logo_RGB_White.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Page Update="Views\Pages\HomePage.xaml">
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Page>
+  </ItemGroup>
+
 </Project>

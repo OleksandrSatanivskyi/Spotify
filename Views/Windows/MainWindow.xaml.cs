@@ -21,6 +21,7 @@ namespace Spotify
     /// </summary>
     public partial class MainWindow : Window
     {
+        private string CurrentDirectory => new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.Parent.FullName;
         public MainWindow()
         {
             InitializeComponent();
@@ -30,5 +31,16 @@ namespace Spotify
             imageBrush.ImageSource = new BitmapImage(new Uri(a));
             logo.Source = new BitmapImage(new Uri(a));
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void HomeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainContainer.Navigate(new Uri(CurrentDirectory + "\\Views\\Pages\\HomePage.xaml", UriKind.RelativeOrAbsolute));
+        }
     }
+    
 }
