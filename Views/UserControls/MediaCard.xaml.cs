@@ -13,18 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PageNavigation.Pages
+namespace Spotify.Views.UserControls
 {
     /// <summary>
-    /// Interaction logic for Landing.xaml
+    /// Interaction logic for MediaCard.xaml
     /// </summary>
-    public partial class Landing : Page
+    public partial class MediaCard : UserControl
     {
-        public Landing()
+        public MediaCard()
         {
             InitializeComponent();
         }
-
-        
     }
 }

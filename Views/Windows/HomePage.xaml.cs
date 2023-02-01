@@ -23,6 +23,7 @@ namespace Spotify.Views.Pages
         public HomePage()
         {
             InitializeComponent();
+            sp.Children.Add(new MediaList());
         }
 
         private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)

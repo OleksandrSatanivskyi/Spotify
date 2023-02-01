@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using Spotify.Models;
+using Spotify.ViewModels;
+using System;
+using System.IO;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace Spotify.Views
 {
@@ -23,6 +15,17 @@ namespace Spotify.Views
         public MediaList()
         {
             InitializeComponent();
+            var l = new SongsViewModel();
+            l.Songs.Add(new Song("Super song", new Artist(), "", new Genre(), DateTime.Today, new TimeSpan(100), new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.Parent + "\\Views\\Resources\\Spotify_Logo_RGB_White.png"));
+
+            l.Songs.Add(new Song("Super song", new Artist(), "", new Genre(), DateTime.Today, new TimeSpan(100), new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.Parent + "\\Views\\Resources\\Spotify_Logo_RGB_White.png"));
+            l.Songs.Add(new Song("Super song", new Artist(), "", new Genre(), DateTime.Today, new TimeSpan(100), new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.Parent + "\\Views\\Resources\\Spotify_Logo_RGB_White.png"));
+            l.Songs.Add(new Song("Super song", new Artist(), "", new Genre(), DateTime.Today, new TimeSpan(100), new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.Parent + "\\Views\\Resources\\Spotify_Logo_RGB_White.png"));
+            l.Songs.Add(new Song("Super song", new Artist(), "", new Genre(), DateTime.Today, new TimeSpan(100), new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.Parent + "\\Views\\Resources\\Spotify_Logo_RGB_White.png"));
+            l.Songs.Add(new Song("Super song", new Artist(), "", new Genre(), DateTime.Today, new TimeSpan(100), new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.Parent + "\\Views\\Resources\\Spotify_Logo_RGB_White.png"));
+            l.Songs.Add(new Song("Super song", new Artist(), "", new Genre(), DateTime.Today, new TimeSpan(100), new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.Parent + "\\Views\\Resources\\Spotify_Logo_RGB_White.png"));
+
+            DataContext = l;
         }
     }
 }

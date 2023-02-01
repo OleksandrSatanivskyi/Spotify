@@ -6,10 +6,12 @@
       xmlns:local="clr-namespace:Spotify.Views.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="1000" d:DesignWidth="1690"
-      Background="Black"
+      Background="White"
       Title="HomePage">
 
     <Grid>
-        <ListView Name="MainListView"/>
+        <StackPanel x:Name="sp">
+            
+        </StackPanel>
     </Grid>
 </Page>

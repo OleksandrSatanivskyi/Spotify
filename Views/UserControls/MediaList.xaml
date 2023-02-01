@@ -6,12 +6,12 @@
              xmlns:local="clr-namespace:Spotify.Views"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             Background="Black"
-             d:DesignHeight="330" d:DesignWidth="1690">
+             Background="Transparent"
+             d:DesignHeight="350" d:DesignWidth="1690">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
-            <RowDefinition Height="270"/>
+            <RowDefinition Height="290"/>
         </Grid.RowDefinitions>
         <Label Name="Title"
                Content="Title"
@@ -25,7 +25,7 @@
         <Button Name="ShowMoreBtn"
                 VerticalAlignment="Top"
                 HorizontalAlignment="Right"
-                Margin="0, 5, 5, 0"
+                Margin="0, 5, 20, 0"
                 Style="{StaticResource MaterialDesignRaisedDarkButton}"
                 Height="50"
                 Background="#FF151515"
@@ -37,37 +37,48 @@
             <TextBlock
               Text="Show more" />
         </Button>
-        <materialDesign:Card HorizontalAlignment="Left" Margin="45, 0" Width="190" Height="270" Grid.Row="1" Background="#FF252525">
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="190" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                <Border Background="Black"
-                        Margin="8"
-                        CornerRadius="8 8 8 8"
-                        Grid.Row="0"/>
-                <Button Grid.Row="0"
-                        Style="{StaticResource MaterialDesignIconButton}"
-                        HorizontalAlignment="Right"
-                        VerticalAlignment="Bottom"
-                        Margin="0 0 16 -15"
-                        Foreground="Black"
-                        Background="#FF32BF32">
-                    <materialDesign:PackIcon Kind="Play" />
-                </Button>
-                <StackPanel Grid.Row="1" Margin="5">
-                    <TextBlock Foreground="White" Text="Title" Name="TitleTb" FontWeight="Bold" />
-                    
+        <ListView Grid.Row="1" ItemsSource="{Binding Songs}" Name="listv">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"></StackPanel>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Margin="5" Background="#FF252525" Height="270" Width="190" CornerRadius="10">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="190" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Border Background="Black"
+                                    Margin="8"
+                                    CornerRadius="8 8 8 8"
+                                    Grid.Row="0">
+                                <Image Source="{Binding Image}"/>
+                            </Border>
+                            <Button Grid.Row="0"
+                                    Style="{StaticResource MaterialDesignIconButton}"
+                                    HorizontalAlignment="Right"
+                                    VerticalAlignment="Bottom"
+                                    Margin="0 0 16 -15"
+                                    Foreground="Black"
+                                    Background="#FF32BF32">
+                                <materialDesign:PackIcon Kind="Play" />
+                            </Button>
+                            <StackPanel Grid.Row="1" Margin="5">
+                                <TextBlock Foreground="White" Text="{Binding Name}" Name="TitleTb" FontWeight="Bold" />
+                                <TextBlock Foreground="Gray" Name="Description"
+                                           TextWrapping="Wrap"
+                                           VerticalAlignment="Center"
+                                           Text="Description" />
+                            </StackPanel>
 
-                    <TextBlock Foreground="Gray" Name="Description"
-                               TextWrapping="Wrap"
-                               VerticalAlignment="Center"
-                               Text="Description" />
-                </StackPanel>
-
-            </Grid>
-        </materialDesign:Card>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListView>
     </Grid>
 
 </UserControl>

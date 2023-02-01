@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PageNavigation;
+using Spotify.Views.Pages;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,10 +27,8 @@ namespace Spotify
         public MainWindow()
         {
             InitializeComponent();
-             
-            ImageBrush imageBrush = new ImageBrush();
+            
             var a = new DirectoryInfo(Environment.CurrentDirectory).Parent.Parent.Parent + "\\Views\\Resources\\Spotify_Logo_RGB_White.png";
-            imageBrush.ImageSource = new BitmapImage(new Uri(a));
             logo.Source = new BitmapImage(new Uri(a));
         }
 
@@ -39,7 +39,8 @@ namespace Spotify
 
         private void HomeBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainContainer.Navigate(new Uri("C:\\Users\\Саша\\source\\repos\\Spotify\\Views\\Windows\\HomePage.xaml", UriKind.Absolute));
+            MainContainer.Content = new HomePage();
+
         }
     }
     

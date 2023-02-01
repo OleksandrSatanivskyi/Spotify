@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Spotify"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:n="clr-namespace:PageNavigation"
         mc:Ignorable="d"
         Title="MainWindow" Height="1080" Width="1920" WindowStartupLocation="CenterScreen">
     <Window.Resources>
@@ -41,7 +41,7 @@
             <StackPanel Orientation="Vertical">
                 <Image x:Name="logo" Margin="10"/>
 
-                <Button x:Name="HomeBtn" HorizontalAlignment="Left" Height="50" Width="200" Style="{DynamicResource MainMenuButtonStyle}" Click="HomeBtn_Click">
+                <Button x:Name="HomeBtn" Foreground="White" HorizontalAlignment="Left" Height="50" Width="200" Style="{DynamicResource MainMenuButtonStyle}" Click="HomeBtn_Click">
                     <Grid Height="50" Width="200">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*" />
@@ -113,7 +113,6 @@
                 <materialDesign:PackIcon Kind="ChevronLeft" />
             </Button>
             <Button Foreground="White"
-                    
                     Style="{StaticResource MaterialDesignIconButton}"
                     Grid.Column="1"
                     ToolTip="MaterialDesignIconButton"
@@ -134,9 +133,8 @@
                       Text="Log in" />
                 </Button>
             </Grid>
-
         </Grid>
-        <Frame Source="HomePage.xaml" x:Name="MainContainer"
+        <Frame Source="Landing.xaml" x:Name="MainContainer"
                Grid.Column="1"
                Grid.Row="1"/>
     </Grid>
