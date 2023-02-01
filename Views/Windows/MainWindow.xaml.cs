@@ -39,7 +39,7 @@ namespace Spotify
 
         private void HomeBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainContainer.Navigate(new Uri(CurrentDirectory + "\\Views\\Pages\\HomePage.xaml", UriKind.RelativeOrAbsolute));
+            MainContainer.Navigate(new Uri("C:\\Users\\Саша\\source\\repos\\Spotify\\Views\\Windows\\HomePage.xaml", UriKind.Absolute));
         }
     }
     

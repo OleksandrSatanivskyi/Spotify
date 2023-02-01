@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:Spotify.Views.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="1000" d:DesignWidth="1690"
-      Background="White"
+      Background="Black"
       Title="HomePage">
 
     <Grid>

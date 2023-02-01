@@ -136,7 +136,7 @@
             </Grid>
 
         </Grid>
-        <Frame x:Name="MainContainer"
+        <Frame Source="HomePage.xaml" x:Name="MainContainer"
                Grid.Column="1"
                Grid.Row="1"/>
     </Grid>
